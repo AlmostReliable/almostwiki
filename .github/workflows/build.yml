@@ -1,0 +1,51 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - 'main'
+    tags-ignore:
+      - '**'
+    paths:
+      - '.github/workflows/build.yml'
+      - 'packages/**'
+      - '**.ts'
+      - '**.json'
+  pull_request:
+    branches:
+      - 'main'
+    tags-ignore:
+      - '**'
+    paths:
+      - 'packages/**'
+      - '**.ts'
+      - '**.json'
+
+env:
+  NODE_VERSION: 18
+  PNPM_VERSION: 8.13.1
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v4.1.1
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.4.0
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4.0.1
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build and check
+        run: pnpm release:check
