@@ -1,35 +1,44 @@
 {
-  "name": "@almostreliable/docs",
-  "version": "1.0.0",
-  "description": "",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/AlmostReliable"
-  },
-  "scripts": {
-    "build": "tsc -b tsconfig.build.json",
-    "copy": "cpx \"src/**/*.{d.ts,vue,scss}\" lib"
-  },
-  "exports": {
-    ".": "./lib/node/index.js",
-    "./client": "./lib/client/*",
-    "./lib/*": "./lib/*",
-    "./package.json": "./package.json"
-  },
-  "keywords": [],
-  "author": "Almost Reliable",
-  "license": "MIT",
-  "dependencies": {
-    "@vuepress/client": "2.0.0-rc.0",
-    "@vuepress/plugin-search": "2.0.0-rc.0",
-    "@vuepress/utils": "2.0.0-rc.0",
-    "cpx": "^1.5.0",
-    "markdown-it-replace-link": "^1.2.0",
-    "vue": "^3.4.3",
-    "vuepress": "2.0.0-rc.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.3.3"
-  }
+    "name": "@almostreliable/docs",
+    "version": "0.0.1",
+    "description": "",
+    "scripts": {
+        "build": "tsc -b tsconfig.build.json",
+        "copy": "cpx \"src/**/*.{d.ts,vue,scss}\" lib",
+        "release": "pnpm publish",
+        "clean": "rimraf lib"
+    },
+    "exports": {
+        ".": "./lib/node/index.js",
+        "./client": "./lib/client/index.js",
+        "./lib/*": "./lib/*",
+        "./package.json": "./package.json"
+    },
+    "main": "./lib/node/index.js",
+    "types": "./lib/node/index.d.ts",
+    "type": "module",
+    "files": [
+        "lib"
+    ],
+    "keywords": [],
+    "author": "Almost Reliable",
+    "license": "MIT",
+    "dependencies": {
+        "markdown-it-replace-link": "^1.2.0"
+    },
+    "devDependencies": {
+        "cpx": "^1.5.0",
+        "dotenv": "^16.3.1",
+        "typescript": "^5.3.3"
+    },
+    "peerDependencies": {
+        "@vuepress/client": "2.0.0-rc.0",
+        "@vuepress/plugin-search": "2.0.0-rc.0",
+        "@vuepress/utils": "2.0.0-rc.0",
+        "vue": "^3.4.3",
+        "vuepress": "2.0.0-rc.0"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
 }

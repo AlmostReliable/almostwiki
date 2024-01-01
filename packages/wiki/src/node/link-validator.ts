@@ -36,7 +36,11 @@ function validateReplacements(replacements: Record<string, string>, allowedURLs:
         }
 
         if (!isLinkAllowed(link, allowedURLs)) {
-            throw new Error(`[AlmostReliable] Link "${link}" (@${key}) is not allowed. Link must be part of: ${toStringURL(allowedURLs)}`);
+            throw new Error(
+                `[AlmostReliable] Link "${link}" (@${key}) is not allowed. Link must be part of: ${toStringURL(
+                    allowedURLs,
+                )}`,
+            );
         }
     }
 }
@@ -89,7 +93,9 @@ export default (allowedLinks: string[], replacements: Record<string, string>) =>
         }
 
         if (isAbsoluteLink(link) && !isLinkAllowed(link, allowedURLs)) {
-            throw new Error(`[AlmostReliable] Link "${link}" is not allowed. Link must be part of: ${toStringURL(allowedURLs)}`);
+            throw new Error(
+                `[AlmostReliable] Link "${link}" is not allowed. Link must be part of: ${toStringURL(allowedURLs)}`,
+            );
         }
 
         return link;

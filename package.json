@@ -1,19 +1,30 @@
 {
-  "name": "almosthome",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build:full": "pnpm build:build && pnpm build:copy",
-    "build:build": "pnpm --parallel --stream build",
-    "build:copy": "pnpm --parallel --stream copy",
-    "release": "pnpm build:full && pnpm publish"
-  },
-  "keywords": [],
-  "author": "Almost Reliable",
-  "license": "MIT",
-  "packageManager": "pnpm@8.13.1",
-  "engines": {
-      "pnpm": ">=7.0.0"
-  }
+    "name": "almosthome",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build:full": "pnpm build:build && pnpm build:copy",
+        "build:build": "pnpm --parallel --stream build",
+        "build:copy": "pnpm --parallel --stream copy",
+        "release:check": "pnpm clean && pnpm build:full",
+        "release:publish": "pnpm release:check && pnpm -r release",
+        "release:test": "pnpm build:full && pnpm -r release --report-summary --dry-run --no-git-checks",
+        "clean": "pnpm --parallel --stream clean",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "prepare": "husky install"
+    },
+    "keywords": [],
+    "author": "Almost Reliable",
+    "license": "MIT",
+    "packageManager": "pnpm@8.13.1",
+    "engines": {
+        "pnpm": ">=8.0.0"
+    },
+    "devDependencies": {
+        "husky": "^8.0.0",
+        "prettier": "^3.1.1",
+        "rimraf": "^5.0.5"
+    }
 }

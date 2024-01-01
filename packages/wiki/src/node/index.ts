@@ -1,7 +1,7 @@
 import { DefaultThemeOptions, Plugin, PluginFunction, SidebarConfig, UserConfig, defaultTheme } from "vuepress";
 import { searchPlugin } from "@vuepress/plugin-search";
 import { getDirname, path } from "@vuepress/utils";
-import LinkValidator from "./link-validator";
+import LinkValidator from "./link-validator.js";
 import markdownLink from "markdown-it-replace-link";
 
 const __dirname = getDirname(import.meta.url);
@@ -38,9 +38,12 @@ export const defineAlmostConfig = (almostConfig?: AlmostOptions): UserConfig => 
         sidebarDepth: 2,
     };
 
+    console.log("Dirname: ", __dirname);
+    console.log(themeOptions);
+
     return {
         title: "Almost Reliable",
-        clientConfigFile: path.resolve(__dirname, "./client/config.js"),
+        clientConfigFile: path.resolve(__dirname, "../client/config.js"),
         theme: defaultTheme(themeOptions),
         plugins: [
             searchPlugin({
