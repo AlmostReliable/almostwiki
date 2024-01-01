@@ -22,7 +22,7 @@
     ],
     "keywords": [],
     "author": "Almost Reliable",
-    "license": "MIT",
+    "license": "GNU LGPLv3",
     "dependencies": {
         "markdown-it-replace-link": "^1.2.0"
     },
