@@ -1,0 +1,7 @@
+{
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {
+    },
+    "include": ["packages/**/*"],
+    "exclude": ["node_modules", ".cache", ".temp", "dist", "lib", "lib"]
+}

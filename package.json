@@ -1,0 +1,19 @@
+{
+  "name": "almosthome",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:full": "pnpm build:build && pnpm build:copy",
+    "build:build": "pnpm --parallel --stream build",
+    "build:copy": "pnpm --parallel --stream copy",
+    "release": "pnpm build:full && pnpm publish"
+  },
+  "keywords": [],
+  "author": "Almost Reliable",
+  "license": "MIT",
+  "packageManager": "pnpm@8.13.1",
+  "engines": {
+      "pnpm": ">=7.0.0"
+  }
+}
