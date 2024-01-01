@@ -23,6 +23,6 @@ jobs:
                   scope: "@AlmostReliable"
                   cache: "pnpm"
             - run: pnpm install
-            - run: pnpm release
+            - run: pnpm release:publish
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH}}
