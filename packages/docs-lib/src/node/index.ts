@@ -33,7 +33,7 @@ export const defineAlmostConfig = (almostConfig?: AlmostOptions): UserConfig => 
     const themeOptions: DefaultThemeOptions = {
         colorMode: "dark",
         colorModeSwitch: false,
-        logo: "https://camo.githubusercontent.com/6bf9d86b8de8f9243d5a6ccaaa8515d5a8d865ea94d2e84f04fbaa3acd3d801d/68747470733a2f2f692e696d6775722e636f6d2f336237476a6b6e2e706e6722",
+        logo: "https://raw.githubusercontent.com/AlmostReliable/almostwiki/main/logo.png",
         sidebar: almostConfig?.sidebar || "auto",
         sidebarDepth: 2,
     };
