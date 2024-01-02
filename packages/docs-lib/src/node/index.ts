@@ -38,9 +38,6 @@ export const defineAlmostConfig = (almostConfig?: AlmostOptions): UserConfig => 
         sidebarDepth: 2,
     };
 
-    console.log("Dirname: ", __dirname);
-    console.log(themeOptions);
-
     return {
         title: "Almost Reliable",
         clientConfigFile: path.resolve(__dirname, "../client/config.js"),
