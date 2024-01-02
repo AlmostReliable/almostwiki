@@ -24,7 +24,7 @@ jobs:
       - name: Evaluate version
         run: |
           if [ "${{ github.event.inputs.version }}" != "" ]; then
-            sed -i "s/\"version\": \".*\"/\"version\": \"${{ github.event.inputs.version }}\"/g" packages/wiki/package.json
+            sed -i "s/\"version\": \".*\"/\"version\": \"${{ github.event.inputs.version }}\"/g" packages/docs-lib/package.json
             echo "NEEDS_COMMIT=true" >> $GITHUB_ENV
           else
             echo "NEEDS_COMMIT=false" >> $GITHUB_ENV
