@@ -18,7 +18,7 @@ importers:
         specifier: ^5.0.5
         version: 5.0.5
 
-  packages/wiki:
+  packages/docs-lib:
     dependencies:
       '@vuepress/client':
         specifier: 2.0.0-rc.0
