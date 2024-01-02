@@ -3,23 +3,23 @@ name: Build
 on:
   push:
     branches:
-      - 'main'
+      - "main"
     tags-ignore:
-      - '**'
+      - "**"
     paths:
-      - '.github/workflows/build.yml'
-      - 'packages/**'
-      - '**.ts'
-      - '**.json'
+      - ".github/workflows/build.yml"
+      - "packages/**"
+      - "**.ts"
+      - "**.json"
   pull_request:
     branches:
-      - 'main'
+      - "main"
     tags-ignore:
-      - '**'
+      - "**"
     paths:
-      - 'packages/**'
-      - '**.ts'
-      - '**.json'
+      - "packages/**"
+      - "**.ts"
+      - "**.json"
 
 env:
   NODE_VERSION: 18
