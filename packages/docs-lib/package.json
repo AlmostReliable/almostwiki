@@ -24,19 +24,19 @@
   "author": "Almost Reliable",
   "license": "GNU LGPLv3",
   "dependencies": {
-    "markdown-it-replace-link": "^1.2.0"
+    "markdown-it-replace-link": "^1.2.1"
   },
   "devDependencies": {
     "cpx": "^1.5.0",
-    "dotenv": "^16.3.1",
+    "dotenv": "^16.4.1",
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
-    "@vuepress/client": "2.0.0-rc.0",
+    "@vuepress/client": "2.0.0-rc.2",
     "@vuepress/plugin-search": "2.0.0-rc.0",
-    "@vuepress/utils": "2.0.0-rc.0",
+    "@vuepress/utils": "2.0.0-rc.2",
     "vue": "^3.4.3",
-    "vuepress": "2.0.0-rc.0"
+    "vuepress": "2.0.0-rc.2"
   },
   "publishConfig": {
     "access": "public"
